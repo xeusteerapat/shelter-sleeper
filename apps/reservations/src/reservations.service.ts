@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { CreateReservationDto } from './dto/create-reservation.dto';
 import { UpdateReservationDto } from './dto/update-reservation.dto';
 import { ReservationsRepository } from './reservations.repository';
-import { Types } from 'mongoose';
 
 @Injectable()
 export class ReservationsService {
@@ -19,6 +18,7 @@ export class ReservationsService {
   }
 
   async findAll() {
+    console.log('hi yo');
     return this.reservationsRepository.find({});
   }
 
