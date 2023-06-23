@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Res, UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { LocaAuthGuard } from './guards/local-auth.guard';
+import { LocaLAuthGuard } from './guards/local-auth.guard';
 import { CurrentUser } from './current-user.decorator';
 import { UserDocument } from './users/models/users.schema';
 import { Response } from 'express';
@@ -9,7 +9,7 @@ import { Response } from 'express';
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
-  @UseGuards(LocaAuthGuard)
+  @UseGuards(LocaLAuthGuard)
   @Post('login')
   async login(
     @CurrentUser() user: UserDocument,
