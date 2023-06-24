@@ -45,3 +45,10 @@ services:
       - .:/usr/src/app
   mongo:
     image: mongo
+    volumes:
+      - ${HOME}/data:/data/db
+    deploy:
+      resources:
+        limits:
+          memory: 4g
+          cpus: '4'
